@@ -70,11 +70,6 @@ port_forward_assignment( )
   fi
 }
 
-set_firewall_rules ( )
-{
-  sysrc firewall_enable="YES"
-  firewall_script=$path/ipfw.rules
-}
 EXITCODE=0
 PROGRAM=`basename $0`
 VERSION=2.1
@@ -96,7 +91,6 @@ do
   shift
 done
 
-set_firewall_rules
 sleep 10
 port_forward_assignment
 
