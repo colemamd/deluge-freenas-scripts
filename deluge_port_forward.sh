@@ -8,7 +8,7 @@
 path="/usr/local/etc/openvpn"
 logfile="/media/VPN.log"
 cred="$path/deluge.credentials"
-addr="$(ifconfig tun2 | awk '/inet/ {print $2}')"
+addr="$(ifconfig tun0 | awk '/inet/ {print $2}')"
 
 error( )
 {

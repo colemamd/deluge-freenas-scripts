@@ -2,7 +2,7 @@
 # Checks to see if VPN is up. Restarts VPN if necessary and runs port forward script.
 # Added as a cron job to run periodically.
 
-intf="tun2"
+intf="tun0"
 path="/usr/local/etc/openvpn"
 logfile="/media/VPN.log"
 
