@@ -14,7 +14,7 @@ user=$(sed -n 1p $cred)
 pass=$(sed -n 2p $cred)
 port=$(cat $path/port.id)
 
-if deluge-console "connect localhost:58846 $user $pass; config -s listen_ports ($port $port); config -s listen_interface '$addr'; config -s outgoing_interface '$addr'"; then
+if deluge-console "connect localhost:58846 $user $pass; config -s listen_ports ($port $port); config -s outgoing_interface $addr"; then
   echo $(date) "Deluge port set to $port" >> $logfile
 else
   echo "Deluge failed to connect, exiting..."

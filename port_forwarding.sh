@@ -83,6 +83,4 @@ done
 
 port_forward_assignment
 
-$path/deluge_port_forward.sh
-
-exit 0
+($path/deluge_port_forward.sh)
