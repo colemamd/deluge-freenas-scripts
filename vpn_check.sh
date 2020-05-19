@@ -4,7 +4,7 @@
 
 intf="tun0"
 path="/usr/local/etc/openvpn"
-logfile="/media/VPN.log"
+logfile="$path/VPN.log"
 
 check=$(ifconfig $intf 2>&1 | awk '/does not exist/ {f=1}; BEGIN{f=0}; END{print f}')
 
@@ -12,5 +12,4 @@ check=$(ifconfig $intf 2>&1 | awk '/does not exist/ {f=1}; BEGIN{f=0}; END{print
 if [ "check" == "1" ]; then
     echo $(date) "VPN down. Restarting VPN..." >> $logfile
     service openvpn start
-    $path/deluge_port_forward.sh &
 fi

@@ -3,11 +3,9 @@
 
 path="/usr/local/etc/openvpn"
 
-service deluged start
-
 # Wait for Deluge to startup
 sleep 5
 
-$path/deluge_port_forward.sh &
+$path/port_forwarding.sh
 
 exit 0
